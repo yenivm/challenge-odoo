@@ -1,0 +1,257 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as mix;
+
+#header{
+    max-width: 120rem;
+    background-color: v.$blue;
+    margin: 0 auto;
+    padding: 3rem 0 5rem 0;
+    position: relative;
+    @include mix.phone{
+        max-width: 54rem;
+    }
+    @include mix.tablet{
+        max-width: 76rem;
+    }
+    @include mix.desktop{
+        max-width: 99rem;
+    }
+}
+
+
+
+#menu{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "logo login"
+    "navigation navigation";
+    border-bottom: solid 1px v.$gray;
+    align-items: center;
+    @include mix.phone{
+        grid-template-columns: 55% 45%;
+    }
+    @include mix.tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+#logo{
+    grid-area: logo;
+    width: 6rem;
+    height: 3rem;
+    img{
+        width: 100%;
+    }
+    @include mix.tablet{
+        width: 8rem;
+        height: 4rem;
+    }
+    @include mix.desktop{
+        width: 10rem;
+        height: 5rem;
+    }
+}
+#principal-navigation{
+    grid-area: navigation;
+    ul{
+        display: flex;
+        width: auto;
+        height: 50px;
+        margin: 0;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        a{
+            color: v.$white; 
+        }
+    }
+    @include mix.tablet{
+        width: 35rem;
+        justify-content: space-around;
+    }
+    @include mix.desktop{
+        max-width: 50rem;
+    }
+}
+
+#botones-menu{
+    grid-area: login;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    @include mix.tablet{
+        width: 17rem;
+    }
+    @include mix.desktop{
+        width: 19rem;
+    }
+}
+
+#contenedor-principaltxt{
+    margin: 5rem auto;
+    @include mix.tablet{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 6rem;
+    }
+    
+}
+#principal-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 4rem;
+    h1{
+        margin-top: 0;
+        color: v.$white;
+        font-size: 4rem;
+    }
+    p{
+        text-align: justify;
+        color: v.$white;
+    }
+    button{
+        margin: 2rem 0;
+        width: 15rem;
+    }
+    
+    @include mix.tablet{
+        padding-bottom: 0;
+        h1{
+            width: 25rem;
+        }
+        p{
+            width: 25rem;
+        }
+    }
+    @include mix.desktop{
+        #icons1{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    
+}
+#icons1{
+     div{
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 16%;
+         }  
+     } 
+}
+
+
+#target{
+    border-bottom-right-radius: 5rem;
+    width: 95%;
+    margin: 0 auto 2rem;
+    @include mix.tablet{
+        width: 100%;
+    }
+    #cabezal{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding-top: 2rem;
+    }
+    #card{
+        margin: 0 auto 2rem;
+        padding: 1.5rem 2rem;
+        background-color: v.$purple;
+        width: 95%;
+        height: auto;
+        border-radius: 1rem;
+        @include mix.phone{
+            width: 80%;
+        }
+        @include mix.tablet{
+            width: 95%;
+        }
+        #logo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            img{
+                width: 15%;
+            }
+            p{
+                margin: 0;
+            }
+        }
+        p{
+            color: v.$white;
+        }
+        
+    }
+    #details{
+        #number-card{
+            font-size: 1.6rem;
+            word-spacing: .9rem;
+            margin-top: .5rem;
+            @include mix.phone{
+                font-size: 1.9rem;
+                letter-spacing: .2rem;
+                word-spacing: .3rem;
+            }
+            @include mix.tablet{
+                font-size: 1.6rem;
+                word-spacing: .1rem;
+                letter-spacing: .1rem;
+            }
+            @include mix.desktop{
+                font-size: 2rem;
+                word-spacing: .8rem;
+            }
+        }
+    }
+    #name-date{
+        width: 24rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .name-date{
+        margin-top: 0;
+    }
+    .link{
+        p{
+            padding: 2rem;
+        }
+    }
+}
+
+#buy-one, #buy-two{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "producto costo"
+    "descripcion descripcion";
+    border-bottom: solid 1px v.$gray;
+    .product{
+        margin-top: 2rem;
+        grid-area: producto;
+        margin-bottom: 0;
+    }
+    .cost{
+        margin-top: 2rem;
+        grid-area: costo;
+        display: inline-block;
+        text-align: end;
+        margin-bottom: 0;
+    }
+    .description{
+        margin-top: 1rem;
+        grid-area: descripcion;
+        color: v.$dark-gray;
+    }
+}
+

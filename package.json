@@ -1,0 +1,32 @@
+{
+  "name": "prueba-odoo",
+  "version": "1.0.0",
+  "description": "prueba de Odoo con HTML, GULP, SASS y JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "HTML",
+    "SASS",
+    "GULP",
+    "JavaScript"
+  ],
+  "author": "Yeni Viveros Montes",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.4.33",
+    "sass": "^1.69.7"
+  },
+  "dependencies": {
+    "gulp-terser-js": "^5.2.2"
+  }
+}

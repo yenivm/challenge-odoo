@@ -1,0 +1,123 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mix;
+
+
+#footer{
+    position: relative;
+    padding: 3rem 0;
+    background-color: v.$purple;
+    p{
+        font-size: 1.4rem;
+    }
+}
+
+#part-one{
+    width: 90%;
+    margin: 0 auto 2rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 1px v.$gray;
+    @include mix.tablet{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+#txt-footer{
+    text-align: center;
+    @include mix.tablet{
+        text-align: start;
+    }
+    h3{
+        padding-bottom: 0;
+    }
+    h3,p{
+        color: v.$white;
+    }
+}
+
+#botones-footer{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    @include mix.tablet{
+        justify-content: flex-end;
+    }
+    
+}
+
+#part-two{
+    width: 90%;
+    margin: 0 auto 2rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 1px v.$gray;
+    color: v.$white;
+    @include mix.tablet{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 2rem;
+    }
+    #social-media{
+        margin: 2rem auto;
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        @include mix.tablet{
+            margin: 0;
+        }
+    }
+}
+.contenedor-logo-odoo{
+    width: 7rem;
+    margin-bottom: 2rem;
+    img{
+        width: 100%;
+    }
+}
+
+#second-navigation{
+    display: flex;
+    justify-content: space-around;
+    ul{
+        padding: 0;
+        li{
+            font-weight: normal;
+            list-style: none;
+            font-size: 1.5rem;
+            &:first-child{
+                margin-top: 1.5rem;
+            }
+        }
+        
+    }
+}
+
+
+#part-three{
+    width: 90%;
+    margin: 0 auto;
+    color: v.$white;
+    @include mix.phone{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+    }
+    @include mix.tablet{
+        grid-template-columns: 70% 30%;
+    }
+}
+
+#third-navigation{
+    ul{
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        
+        li{
+            padding: 1rem 0;
+            list-style: none;
+            font-size: 1.5rem;
+        }
+        
+    }
+}
